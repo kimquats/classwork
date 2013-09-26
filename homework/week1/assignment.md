@@ -25,7 +25,7 @@ Proceed to push that to your remote git repository on github.
 
     git push
 
-Write your sentence here:
+Write your sentence here: Hello jerkwads
 
 
 ## 1. Play through the first three levels of [Manufactoria](http://pleasingfungus.com/Manufactoria/)
@@ -68,7 +68,7 @@ number stored in this slot":
     07:
     10: 12
     11: 15
-    12:
+    12: 3
     13:
     14:
     15:
@@ -76,10 +76,10 @@ number stored in this slot":
     17:
 
 Feel free to use the above as space to actually work out the
-answer. What does this output?
+answer. What does this output? 3
 
 Try the same program with some other inputs in slots 10 and 11.  What
-does this program compute?
+does this program compute? The smallest common factor of the two inputs.
 
 ## 3. Low-level programming II
 
@@ -117,18 +117,18 @@ Here's the program:
     05: MOV 13 12
     06: JNZ 10 02
     07: OUT 11
-    10: 6
-    11:
-    12:
-    13:
+    10: 0
+    11: 5
+    12: 8
+    13: 13
     14:
     15:
     16:
     17:
 
-What does this output?
+What does this output? 13
 
-In general, what will this program output, given any input in slot 10?
+In general, what will this program output, given any input in slot 10? The number at [10]+2 in the Fibonacci sequence
 
 
 ## 4. Reading
@@ -140,8 +140,8 @@ Most readings for the beginning of the class will come from this textbook.  You 
 
 ## 5. Finally:
 
-How much time did this problem set take you?
+How much time did this problem set take you? An hour and a half
 
-What, if anything, did you have trouble with?
+What, if anything, did you have trouble with? Realizing that the router in manufactoria was red, blue, and no color. I spent a good half hour trying to solve the problem for three colors.
 
-What, from lecture, would you like us to cover more clearly?
+What, from lecture, would you like us to cover more clearly? Not sure, but I'll give Aria a secret signal when I need a clarification
