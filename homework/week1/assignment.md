@@ -79,7 +79,7 @@ Feel free to use the above as space to actually work out the
 answer. What does this output? 3
 
 Try the same program with some other inputs in slots 10 and 11.  What
-does this program compute? The smallest common factor of the two inputs.
+does this program compute? The largest common factor of the two inputs.
 
 ## 3. Low-level programming II
 
