@@ -3,7 +3,21 @@ from random import *
 
 
 def is_word(text):
-    """ REPLACE THIS TEXT WITH YOUR ANSWER """
+    """  
+    Determines whether or not a given string contains only alphanumeric characters
+    with or without apostrophes, and with no spaces or other punctuation.
+
+    Parameters:
+    text - a string
+
+    For a string containing at least one alphanumeric character, return True.
+    
+    For a string containing at least one alphanumeric character and any number of 
+    apostrophes, return True.
+
+    For everything else, return False.
+
+    """
     if text == "'":
         return False
     #for contractions
@@ -12,7 +26,16 @@ def is_word(text):
     return False
 
 def split_words_and_punctuation(text):
-    """ REPLACE THIS TEXT WITH YOUR ANSWER """
+    """
+    Converts a string of text into a list containing the individual words and
+    punctuation marks in the text.
+
+    Parameters:
+    text - An English string which will be used to generate the list.
+
+    This function should return a list containing strings, with each string being
+    a word or a punctuation mark.
+    """
     words = []
     currentword = ""
     for i in range(len(text)):
@@ -39,7 +62,9 @@ def split_words_and_punctuation(text):
     return words
 
 def add_word(d, word, next_word):
-    """ REPLACE_THIS_TEXT_WITH_YOUR_ANSWER"""
+    """ 
+    
+    """
     if word in d:
         d[word].append(next_word)
     else:

@@ -14,6 +14,7 @@ def conjoin(first, second):
     first before writing each function implementation!
     """
     pass
+    return first + " and " + second
 
 def print_lots(phrase, times):
     """
@@ -29,6 +30,7 @@ def print_lots(phrase, times):
     Has no defined return value (i.e. you do not need a return statement).
     """
     pass
+    print times*(phrase + " ")
 
 def joyful_phrase():
     """
@@ -41,6 +43,9 @@ def joyful_phrase():
     Has no defined return value.
     """
     pass
+    import random
+    joyful_phrase = ["Today is a beautiful day", "I love everyone and everything", "Things are generally looking up, all things considered", "The world is looking out for me", "I hope it stays like this forever"]
+    return joyful_phrase[random.randint(0, 4)]
 
 
 def add_last_two(lst):
@@ -56,6 +61,14 @@ def add_last_two(lst):
     For empty lists (e.g. []), returns 0
     """
     pass
+    if len(lst) > 1:
+        return lst[-1] + lst[-2]
+    elif len(lst) == 1:
+        return lst[-1]
+    elif len(lst) == 0:
+        return 0
+
+
 
 def extend_fibonacci(lst):
     """
@@ -81,13 +94,22 @@ def extend_fibonacci(lst):
 
     This function should not return anything, but should modify lst directly.
     """
-    pass
+    lst.append(add_last_two(lst))
 
 #Read the code, try out the function in the interpreter, and write
 #the specification for the following function:
 
 def count_v(word):
-    """ FILL IN THE SPECIFICATION HERE """
+    """ 
+    Returns the number of vowels present in a given input string.
+
+    Parameters:
+    word - A string, preferably containing letters and including both vowels
+    and consonants.
+
+    This function should return an integer equal to the number of vowels in 
+    word.
+    """
     result = 0
     for c in word:
         if c in ['a', 'e', 'i', 'o', 'u']:
@@ -116,11 +138,32 @@ print conjoin(conjoin("a", "b"), "c")
 
 # call print_lots
 
+print_lots("oh crap", 2),
+print_lots("make it stop", 3)
+
+
 # call joyful_phrase
+
+weekly_cult_platitudes =  "As is often said by our Grand Spiritual Master, " + joyful_phrase() + " and " + joyful_phrase() + "."
+print weekly_cult_platitudes
+
 
 # call add_last_two
 
+camels_back = [15, 23, 48, 67, 81]
+straw1 = add_last_two(camels_back)
+straw2 = 3*add_last_two(camels_back)
+print straw1 + straw2
+
 # call extend_fibonacci
+
+plant_stem_count = [8, 13, 21]
+extend_fibonacci(plant_stem_count)
+print plant_stem_count
+extend_fibonacci(plant_stem_count)
+print plant_stem_count
 
 # call count_v
 
+vowel_fraction = float(count_v('onomatopoeia'))/float(len('onomatopoeia'))
+print vowel_fraction
