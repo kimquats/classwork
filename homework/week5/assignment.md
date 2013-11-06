@@ -29,12 +29,19 @@ Some of the functions have bugs.  Describe the bugs you find:
 
 Answer here...
 
+1. normalize doesn't remove non-alphabetic characters
+2. none of the functions take case into account. It doesn't mention it in the specification,
+but it's probably a good idea to take it into account, seeing as the dictionary is in all 
+lowercase, and people tend to enter their names beginning with uppercase.
+3. anagram returns the resulting anagrams without spaces between words.
 
 Optional: See if you can fix the bugs you found.  Use the `anagrams()` function in
 the python interpereter to find anagrams of your name.  What's your
 favorite anagram of your name:
 
 Answer here...
+
+ruby red milk (kimberly dru)
 
 
 ## Exception warmup:

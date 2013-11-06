@@ -16,8 +16,10 @@ def normalize(letters):
     set of letters that are the same.  It removes any non-alphabetic characters.
     """
     lst = []
+    letters = letters.lower()
     for c in letters:
-        lst.append(c)
+        if c.isalpha():
+            lst.append(c)
     lst.sort()
     return "".join(lst)
 
@@ -90,7 +92,7 @@ def anagrams(letters, words, min_length=3, memo = {}):
             # include this word at the beginning of each of them
             sub_anagrams = anagrams(remainder, candidate_words, min_length, memo)
             for ana in sub_anagrams:
-                results.append(word + ana)
+                results.append(word + " " + ana)
     # save the answer and return
     memo[letters] = results
     return results
