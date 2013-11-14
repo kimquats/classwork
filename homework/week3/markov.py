@@ -106,42 +106,46 @@ def table_of_next_words(text):
       'c': ['a']
     }
     """
-    # word_table = {}
-    # make a dictionary. split words and punc in text, assign to wordslist. 
-    # take wordslist, and for each word/punc in the list, if the next word is a word,
-    # add it is a paired 
     word_table = {}
-    words_list = ['']
-    words_list = split_words_and_punctuation(text)
-    prev_word = ''
-    last_word = ''
-    for this_word in words_list:
-        if is_word(prev_word):
-            add_word(word_table, prev_word, this_word)
-        prev_word = this_word
-    #i = -1
-    #while is_word(words_list[i]) == False:
-    #    i -= 1
-    #last_word = words_list[i]
-    for i in reversed(words_list):
-        if is_word(i):
-            last_word = i
-            break
-    if len(words_list) > 0 and len(last_word) > 0:
-        add_word(word_table, None, words_list[0])
-        word_table[last_word].append(None)
+    if len(text) > 0:
+      update_table(word_table, text)
     else:
-        add_word(word_table, None, None)
+        word_table = { None: [None] }
     return word_table
 
-        
+def update_table(table, new_words):
+    """
+    Takes a string of words and uses it to update a table of words we have seen after other words.
+
+    Parameters:
+    
+    table - A dictionary containing a table of words and the words that follow them
+
+    new_words - A string containing words that will be used to update a previously existing
+                table of new words
+
+    This function does not return anything; it modifies the table it's given
+    """
+    words_list = split_words_and_punctuation(new_words)
+    if len(words_list) > 0:
+      current_word = words_list[0]
+      for i in range(len(words_list)-1):
+        add_word(table, current_word, words_list[i+1])
+        current_word = words_list[i+1]
+      for i in reversed(words_list): 
+              last_word = i
+              break
+      add_word(table, None, words_list[0])
+      add_word(table, last_word, None)
+    else:
+        pass
+
 
 
 def pick_random_element(lst):
     """ Return a random element in the given list lst."""
-    pass
     import random
-    random_element = random.choice(lst)
+    random_element = lst[random.randrange(len(lst))]
     return random_element
 
 
@@ -170,18 +174,16 @@ def make_text(table):
     * No punctuation is preceded by a space.
     
     """
-    # new text is a list. First word is value for key None. while current_word != None, if is_word(current_word) == True, new_text.append(current_word + ' '), elif is_word append current word to new_text, where current_word = pick_random_element(dict[new_text[-1]])
+    current_word = pick_random_element(table[None])
     new_text = []
-    new_text.append(table[None])
-    current_word = ''
     while current_word != None:
-        current_word = pick_random_element(new_text[-1])
         if is_word(current_word):
             new_text.append(' ' + current_word)
-        else:
+        elif current_word.isalnum() == False:
             new_text.append(current_word)
+        current_word = pick_random_element(table[current_word])    
     text = ''
-    for i in new_text:
+    for i in range(len(new_text)):
         text += new_text[i]
     return text
  
