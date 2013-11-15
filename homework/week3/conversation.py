@@ -1,4 +1,4 @@
-from modmarkov import *
+from markov import *
 
 def chat_with_markov():
     print 'Hello!'
