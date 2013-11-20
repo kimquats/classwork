@@ -1,20 +1,13 @@
 import copy
+import validator
 
 #Get an array initialized, 15x15
 def make_board():
-    """
-    A board is a list of lists of dictionaries.
-
-    board[r][c] is the dictionary representing the square at row r and column c
-
-    A dictionary representing a square can have:
-    * A key 'letter' that contains a single letter that is played at that square.
-    """
     board = []
     for i in range(15):
         row = []
         for j in range(15):
-            row.append({})
+            row.append({'letter': None, 'bonus': None})
         board.append(row)
     return board
 
@@ -95,3 +88,9 @@ def read_board(str_board):
         for col, letter in enumerate(line):
             play_letter(letter, board, (row, col))
     return board
+
+def validate_board(board):
+    if validator.validate(board) == True:
+        return True
+    else:
+        return False
