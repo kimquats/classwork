@@ -7,7 +7,7 @@ def make_board():
     for i in range(15):
         row = []
         for j in range(15):
-            row.append({'letter': None, 'bonus': None})
+            row.append({})
         board.append(row)
     return board
 

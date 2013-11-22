@@ -85,9 +85,3 @@ OFF.ALONE......
 ........YAK....
 ........T......
 ........E......"""
-
-for i in range(len(board1rows)):
-...   column = ''
-...   for j in range(len(board1rows)):
-...     column += board1rows[j][i]
-...   board1columns.append(column)
